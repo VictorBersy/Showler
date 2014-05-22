@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'user/signup/' => 'users#new'
+  post 'user/signup/' => 'users#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

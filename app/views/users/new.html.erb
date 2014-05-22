@@ -1,16 +1,16 @@
 <div class="row">
   <div class="small-12 columns">
-  <%= form_tag do %>
+  <%= form_for @user, url: {action: "create"} do |f| %>
   <fieldset>
-  <legend>Sign Up</legend>
-  <label>Username
-    <input type="text" placeholder="Username...">
-  </label>
-  <label>Password
-    <input type="password" placeholder="Password...">
-  </label>
-  <input type="submit" class="button" value="Signup !">
+    <legend>Sign Up</legend>
+    <label>Username
+      <%= f.text_field :username, autofocus: true, placeholder: 'Username...' %>
+    </label>
+    <label>Password
+      <%= f.password_field :password, placeholder: 'Password...' %>
+    </label>
+    <%= f.submit 'Signup !', :class => 'button' %>
   </fieldset>
-    <% end %>
+  <% end %>
   </div>
 </div>

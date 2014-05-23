@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(secure_params)
-    p @user.save
 
     if @user.save
       flash[:username] = "#{@user.username} has been created!"

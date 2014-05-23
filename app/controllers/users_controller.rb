@@ -7,8 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(secure_params)
 
     if @user.save
-      flash[:username] = "#{@user.username} has been created!"
-      redirect_to root_url
+      redirect_to root_url, flash: {success: "#{@user.screen_name} has been created!"}
     else
       render :action => "new"
     end
@@ -17,6 +16,6 @@ class UsersController < ApplicationController
   private
 
   def secure_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :screen_name, :password)
   end
 end

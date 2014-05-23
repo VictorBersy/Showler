@@ -6,8 +6,16 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'home#index'
 
-  get 'user/signup/' => 'users#new'
-  post 'user/signup/' => 'users#create'
+  controller :users do
+    get  '/signup' => :new
+    post '/signup' => :create
+  end
+
+  controller :sessions do
+    get    '/signin'  => :new
+    post   '/signin'  => :create
+    delete '/signout' => :destroy
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

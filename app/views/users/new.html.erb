@@ -1,16 +1,17 @@
+<% provide(:title, "Sign up") %>
+<h1>Sign up</h1>
+
 <div class="row">
   <div class="small-12 columns">
-  <%= form_for @user, url: {action: "create"} do |f| %>
-  <fieldset>
-    <legend>Sign Up</legend>
-    <label>Username
+    <%= form_for(@user, url: {action: "create"}) do |f| %>
+
+      <%= f.label :username %>
       <%= f.text_field :username, autofocus: true, placeholder: 'Username...' %>
-    </label>
-    <label>Password
+
+      <%= f.label :password %>
       <%= f.password_field :password, placeholder: 'Password...' %>
-    </label>
-    <%= f.submit 'Signup !', :class => 'button' %>
-  </fieldset>
-  <% end %>
+
+    <%= f.submit 'Sign up !', :class => 'button' %>
+    <% end %>
   </div>
 </div>

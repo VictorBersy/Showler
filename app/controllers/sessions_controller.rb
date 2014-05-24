@@ -15,7 +15,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sign_out
-    redirect_to root_url
+    if signed_in?
+      sign_out
+      redirect_to root_url, flash: {info: "You have been logged out."}
+    end
   end
 end

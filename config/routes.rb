@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   controller :sessions do
     get    '/signin'  => :new
     post   '/signin'  => :create
-    delete '/signout' => :destroy
+    match '/signout' => :destroy, via: :all
   end
 
   # Example of regular route:

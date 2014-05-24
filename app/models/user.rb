@@ -3,6 +3,5 @@ class User < ActiveRecord::Base
     self.screen_name = self.username
     self.username = self.username.downcase
   end
-  validates_uniqueness_of :username
   has_secure_password
 end

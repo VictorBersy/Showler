@@ -11,7 +11,11 @@
 
   <section class="top-bar-section">
     <ul class="right">
-      <li class="active"><%= link_to 'Signup', signup_path %></li>
+    <% if signed_in? %>
+      <%= render "layouts/topbar/right_logged" %>
+    <% else %>
+      <%= render "layouts/topbar/right_not_logged" %>
+    <% end %>
     </ul>
   </section>
 </nav>

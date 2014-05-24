@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url, flash: {success: "#{@user.screen_name} has been created!"}
     else
-      render :action => "new"
+      render :new
     end
   end
 

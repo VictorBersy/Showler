@@ -40,3 +40,5 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use foundation as HTML/CSS template
 gem 'foundation-rails'
+# Use OAuth 2 to authenticate the user
+gem 'oauth2', '~> 0.9.4'

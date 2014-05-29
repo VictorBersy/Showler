@@ -11,10 +11,10 @@
 
   <section class="top-bar-section">
     <ul class="right">
-    <% if signed_in? %>
-      <%= render "layouts/topbar/right_logged" %>
+    <% if user_signed_in? %>
+      <%= render "/layouts/topbar/logged" %>
     <% else %>
-      <%= render "layouts/topbar/right_not_logged" %>
+      <%= render "/layouts/topbar/not_logged" %>
     <% end %>
     </ul>
   </section>

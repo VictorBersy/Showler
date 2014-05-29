@@ -6,16 +6,12 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'home#index'
 
-  controller :users do
-    get  '/signup' => :new
-    post '/signup' => :create
-  end
-
-  controller :sessions do
-    get    '/signin'  => :new
-    post   '/signin'  => :create
-    match '/signout' => :destroy, via: :all
-  end
+  devise_for :user,
+    :path_names => {
+      :sign_up => 'signup',
+      :sign_in => 'signin',
+      :sign_out => 'signout'
+    }
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
